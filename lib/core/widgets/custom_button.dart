@@ -72,8 +72,9 @@ class CustomButton extends StatelessWidget {
                 ),
               ],
         ),
+
         child: Row(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (image != null) ...[
               Image.asset(
@@ -82,21 +83,20 @@ class CustomButton extends StatelessWidget {
                 height: 20.h,
                 fit: BoxFit.contain,
               ),
-              8.horizontalSpace,
             ],
-
             if (iconData != null) ...[
               Icon(iconData, color: textColor ?? Colors.white, size: 25.sp),
-              7.horizontalSpace,
             ],
-            50.horizontalSpace,
             if (text != null)
-              Text(
-                text!,
-                style: TextStyle(
-                  color: textColor ?? Colors.white,
-                  fontSize: fontSize ?? 16.sp,
-                  fontWeight: fontWeight,
+              Expanded(
+                child: Text(
+                  text!,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: textColor ?? Colors.white,
+                    fontSize: fontSize ?? 16.sp,
+                    fontWeight: fontWeight,
+                  ),
                 ),
               ),
           ],
