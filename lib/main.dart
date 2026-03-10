@@ -29,15 +29,10 @@ void main() async {
   ]);
 
   // await CacheHelper.clearAllData();
-
   // await CacheHelper.clearAllSecuredData();
-
   Bloc.observer = MyBlocObserver();
-
   userToken = await CacheHelper.getSecuredString(key: CacheKeys.userToken);
-
   final deviceLocale = WidgetsBinding.instance.platformDispatcher.locale;
-
   Locale startLocale;
   const supportedLocales = [Locale('ar'), Locale('en')];
 
@@ -98,7 +93,7 @@ class TaskApp extends StatelessWidget {
               theme: darkTheme,
               darkTheme: darkTheme,
               themeMode: ThemeMode.light,
-              initialRoute: Routes.loginScreen,
+              initialRoute: Routes.welcomeScreen,
               onGenerateRoute: appRouter.generateRoute,
               builder: EasyLoading.init(),
             );

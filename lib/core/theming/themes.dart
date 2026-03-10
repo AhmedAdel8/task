@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task/core/theming/colors.dart';
 
 final ThemeData darkTheme = ThemeData(
+  fontFamily: 'Satoshi',
   appBarTheme: AppBarTheme(
     centerTitle: true,
     elevation: 0,

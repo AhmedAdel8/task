@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:task/core/di.dart';
 import 'package:task/core/routing/routes.dart';
-import 'package:task/features/auth/cubit/auth_cubit.dart';
-import 'package:task/features/auth/presentation/screens/login_screen.dart';
+import 'package:task/features/auth/presentation/screens/welcome_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -27,9 +25,9 @@ class AppRouter {
     }
 
     switch (settings.name) {
-      case Routes.loginScreen:
+      case Routes.welcomeScreen:
         return transition(
-          screen:  LoginScreen(),
+          screen: WelcomeScreen(),
           // cubit: AuthCubit(getIt()),
         );
 

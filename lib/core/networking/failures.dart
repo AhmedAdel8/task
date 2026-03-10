@@ -102,7 +102,7 @@ class ApiErrorHandler {
     CacheHelper.clearAllSecuredData();
     DioFactory.clearAuthToken();
 
-    navigatorKey.currentContext?.pushNamedAndRemoveUntil(Routes.loginScreen);
+    navigatorKey.currentContext?.pushNamedAndRemoveUntil(Routes.welcomeScreen);
 
     customToast(msg: "error_session_expired".tr(), color: Colors.red);
   }

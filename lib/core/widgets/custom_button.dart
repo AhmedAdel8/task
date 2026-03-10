@@ -4,6 +4,7 @@ import 'package:task/core/theming/colors.dart';
 
 class CustomButton extends StatelessWidget {
   final VoidCallback? onPressed;
+  final String? image;
   final IconData? iconData;
   final String? text;
   final Color? color;
@@ -16,8 +17,6 @@ class CustomButton extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   final double borderRadius;
   final BorderSide? borderSide;
-  final double? elevation;
-  final bool? enableShadow;
   final bool? isEnabled;
   final List<Color>? gradientColors;
   final List<BoxShadow>? boxShadow;
@@ -25,6 +24,7 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     this.onPressed,
+    this.image,
     this.iconData,
     this.text,
     this.color,
@@ -37,9 +37,7 @@ class CustomButton extends StatelessWidget {
     this.padding,
     this.borderRadius = 18.0,
     this.borderSide,
-    this.elevation,
-    this.enableShadow,
-    this.isEnabled,
+    this.isEnabled = true,
     this.gradientColors,
     this.boxShadow,
   });
@@ -47,18 +45,18 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onPressed,
+      onTap: isEnabled == false ? null : onPressed,
       child: Container(
         width: width ?? MediaQuery.of(context).size.width * 0.9,
         height: height ?? 50.h,
         margin: margin,
-        padding: padding ?? EdgeInsets.symmetric(horizontal: 2.w),
+        padding: padding ?? EdgeInsets.symmetric(horizontal: 12.w),
         decoration: BoxDecoration(
           gradient: gradientColors != null
               ? LinearGradient(
                   colors: gradientColors!,
-                  end: Alignment.bottomCenter,
                   begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                 )
               : null,
           borderRadius: BorderRadius.circular(borderRadius),
@@ -68,19 +66,31 @@ class CustomButton extends StatelessWidget {
               boxShadow ??
               [
                 BoxShadow(
-                  color: Colors.grey.withValues(alpha: 0.3),
+                  color: Colors.grey.withOpacity(0.3),
                   spreadRadius: -1,
                   blurRadius: 5.sp,
                 ),
               ],
         ),
-        child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              if (iconData != null)
-                Icon(iconData, color: textColor ?? Colors.white, size: 25.sp),
-              if (iconData != null) 7.horizontalSpace,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (image != null) ...[
+              Image.asset(
+                image!,
+                width: 20.w,
+                height: 20.h,
+                fit: BoxFit.contain,
+              ),
+              8.horizontalSpace,
+            ],
+
+            if (iconData != null) ...[
+              Icon(iconData, color: textColor ?? Colors.white, size: 25.sp),
+              7.horizontalSpace,
+            ],
+            50.horizontalSpace,
+            if (text != null)
               Text(
                 text!,
                 style: TextStyle(
@@ -89,8 +99,7 @@ class CustomButton extends StatelessWidget {
                   fontWeight: fontWeight,
                 ),
               ),
-            ],
-          ),
+          ],
         ),
       ),
     );

@@ -27,7 +27,7 @@ class PleaseLoginWidget extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.7,
               margin: EdgeInsets.all(20.sp),
               onPressed: () {
-                context.pushNamed(Routes.loginScreen);
+                context.pushNamed(Routes.welcomeScreen);
               },
             ),
           ],
