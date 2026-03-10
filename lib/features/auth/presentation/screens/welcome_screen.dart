@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task/core/constants.dart';
 import 'package:task/core/widgets/custom_button.dart';
+import 'package:task/features/auth/presentation/widgets/welcome_widget.dart';
 import 'package:task/features/auth/presentation/widgets/already_have_account_widget.dart';
 import 'package:task/features/auth/presentation/widgets/custom_soical_button_widget.dart';
 import 'package:task/features/auth/presentation/widgets/divider_widget.dart';
@@ -32,34 +33,7 @@ class WelcomeScreen extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    ShaderMask(
-                      shaderCallback: (bounds) => const LinearGradient(
-                        colors: [Color(0xFFE4B679), Color(0xFFFEE5C4)],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                      ).createShader(bounds),
-                      child: Text(
-                        "Welcome to OasisNow",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: "Satoshi",
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20.sp,
-                          letterSpacing: -0.5,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    6.verticalSpace,
-                    Text(
-                      "The best cooking and the best care from our professional hands to your plate",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w400,
-                        color: const Color(0xffffffff).withValues(alpha: 0.6),
-                      ),
-                    ),
+                    const WelcomeWidget(),
                     35.verticalSpace,
                     const CustomSoicalButtonWidget(),
                     16.verticalSpace,

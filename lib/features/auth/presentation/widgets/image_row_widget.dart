@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:task/features/auth/presentation/screens/welcome_screen.dart';
 
 class ImageRowWidget extends StatefulWidget {
   final List<String> images;
