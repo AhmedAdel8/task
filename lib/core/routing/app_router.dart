@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:task/core/di.dart';
 import 'package:task/core/routing/routes.dart';
+import 'package:task/features/auth/cubit/auth_cubit.dart';
 import 'package:task/features/auth/presentation/screens/welcome_screen.dart';
 
 class AppRouter {
@@ -27,8 +29,8 @@ class AppRouter {
     switch (settings.name) {
       case Routes.welcomeScreen:
         return transition(
-          screen: WelcomeScreen(),
-          // cubit: AuthCubit(getIt()),
+          screen: const WelcomeScreen(),
+          cubit: AuthCubit(getIt()),
         );
 
       default:

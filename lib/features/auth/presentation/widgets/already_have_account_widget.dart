@@ -13,7 +13,6 @@ class AlreadyHaveAccountWidget extends StatelessWidget {
           "Already have an account ",
           style: TextStyle(
             fontWeight: FontWeight.w700,
-
             color: const Color(0xffAAAAAA),
             fontSize: 12.sp,
           ),
