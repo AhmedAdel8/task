@@ -12,6 +12,8 @@ class AlreadyHaveAccountWidget extends StatelessWidget {
         Text(
           "Already have an account ",
           style: TextStyle(
+            fontFamily: "Satoshi Variable",
+
             fontWeight: FontWeight.w700,
             color: const Color(0xffAAAAAA),
             fontSize: 12.sp,
@@ -28,7 +30,8 @@ class AlreadyHaveAccountWidget extends StatelessWidget {
             "Login",
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontFamily: "Satoshi",
+              fontFamily: "Satoshi Variable",
+
               fontWeight: FontWeight.w700,
               fontSize: 16.sp,
               letterSpacing: -0.5,

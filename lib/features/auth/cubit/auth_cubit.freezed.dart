@@ -55,18 +55,16 @@ extension AuthStatePatterns on AuthState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( AuthStateLoginLoading value)?  loginLoading,TResult Function( AuthStateLoginSuccess value)?  loginSuccess,TResult Function( AuthStateLoginError value)?  loginError,TResult Function( TimeoutFailureAuth value)?  timeOut,TResult Function( AuthStateChangePasswordVisibility value)?  authStateChangePasswordVisibility,TResult Function( AuthStateShowSignUp value)?  showSignUp,TResult Function( AuthStateSignUpError value)?  signUpError,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( AuthStateChangePasswordVisibility value)?  authStateChangePasswordVisibility,TResult Function( AuthStateChangeRePasswordVisibility value)?  authStateChangeRePasswordVisibility,TResult Function( AuthStateShowSignUp value)?  showSignUp,TResult Function( AuthStateSignUpError value)?  signUpError,TResult Function( AuthStateSignUpSuccess value)?  signUpSuccess,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case AuthStateLoginLoading() when loginLoading != null:
-return loginLoading(_that);case AuthStateLoginSuccess() when loginSuccess != null:
-return loginSuccess(_that);case AuthStateLoginError() when loginError != null:
-return loginError(_that);case TimeoutFailureAuth() when timeOut != null:
-return timeOut(_that);case AuthStateChangePasswordVisibility() when authStateChangePasswordVisibility != null:
-return authStateChangePasswordVisibility(_that);case AuthStateShowSignUp() when showSignUp != null:
+return initial(_that);case AuthStateChangePasswordVisibility() when authStateChangePasswordVisibility != null:
+return authStateChangePasswordVisibility(_that);case AuthStateChangeRePasswordVisibility() when authStateChangeRePasswordVisibility != null:
+return authStateChangeRePasswordVisibility(_that);case AuthStateShowSignUp() when showSignUp != null:
 return showSignUp(_that);case AuthStateSignUpError() when signUpError != null:
-return signUpError(_that);case _:
+return signUpError(_that);case AuthStateSignUpSuccess() when signUpSuccess != null:
+return signUpSuccess(_that);case _:
   return orElse();
 
 }
@@ -84,18 +82,16 @@ return signUpError(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( AuthStateLoginLoading value)  loginLoading,required TResult Function( AuthStateLoginSuccess value)  loginSuccess,required TResult Function( AuthStateLoginError value)  loginError,required TResult Function( TimeoutFailureAuth value)  timeOut,required TResult Function( AuthStateChangePasswordVisibility value)  authStateChangePasswordVisibility,required TResult Function( AuthStateShowSignUp value)  showSignUp,required TResult Function( AuthStateSignUpError value)  signUpError,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( AuthStateChangePasswordVisibility value)  authStateChangePasswordVisibility,required TResult Function( AuthStateChangeRePasswordVisibility value)  authStateChangeRePasswordVisibility,required TResult Function( AuthStateShowSignUp value)  showSignUp,required TResult Function( AuthStateSignUpError value)  signUpError,required TResult Function( AuthStateSignUpSuccess value)  signUpSuccess,}){
 final _that = this;
 switch (_that) {
 case _Initial():
-return initial(_that);case AuthStateLoginLoading():
-return loginLoading(_that);case AuthStateLoginSuccess():
-return loginSuccess(_that);case AuthStateLoginError():
-return loginError(_that);case TimeoutFailureAuth():
-return timeOut(_that);case AuthStateChangePasswordVisibility():
-return authStateChangePasswordVisibility(_that);case AuthStateShowSignUp():
+return initial(_that);case AuthStateChangePasswordVisibility():
+return authStateChangePasswordVisibility(_that);case AuthStateChangeRePasswordVisibility():
+return authStateChangeRePasswordVisibility(_that);case AuthStateShowSignUp():
 return showSignUp(_that);case AuthStateSignUpError():
-return signUpError(_that);case _:
+return signUpError(_that);case AuthStateSignUpSuccess():
+return signUpSuccess(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -112,18 +108,16 @@ return signUpError(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( AuthStateLoginLoading value)?  loginLoading,TResult? Function( AuthStateLoginSuccess value)?  loginSuccess,TResult? Function( AuthStateLoginError value)?  loginError,TResult? Function( TimeoutFailureAuth value)?  timeOut,TResult? Function( AuthStateChangePasswordVisibility value)?  authStateChangePasswordVisibility,TResult? Function( AuthStateShowSignUp value)?  showSignUp,TResult? Function( AuthStateSignUpError value)?  signUpError,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( AuthStateChangePasswordVisibility value)?  authStateChangePasswordVisibility,TResult? Function( AuthStateChangeRePasswordVisibility value)?  authStateChangeRePasswordVisibility,TResult? Function( AuthStateShowSignUp value)?  showSignUp,TResult? Function( AuthStateSignUpError value)?  signUpError,TResult? Function( AuthStateSignUpSuccess value)?  signUpSuccess,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case AuthStateLoginLoading() when loginLoading != null:
-return loginLoading(_that);case AuthStateLoginSuccess() when loginSuccess != null:
-return loginSuccess(_that);case AuthStateLoginError() when loginError != null:
-return loginError(_that);case TimeoutFailureAuth() when timeOut != null:
-return timeOut(_that);case AuthStateChangePasswordVisibility() when authStateChangePasswordVisibility != null:
-return authStateChangePasswordVisibility(_that);case AuthStateShowSignUp() when showSignUp != null:
+return initial(_that);case AuthStateChangePasswordVisibility() when authStateChangePasswordVisibility != null:
+return authStateChangePasswordVisibility(_that);case AuthStateChangeRePasswordVisibility() when authStateChangeRePasswordVisibility != null:
+return authStateChangeRePasswordVisibility(_that);case AuthStateShowSignUp() when showSignUp != null:
 return showSignUp(_that);case AuthStateSignUpError() when signUpError != null:
-return signUpError(_that);case _:
+return signUpError(_that);case AuthStateSignUpSuccess() when signUpSuccess != null:
+return signUpSuccess(_that);case _:
   return null;
 
 }
@@ -140,17 +134,15 @@ return signUpError(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loginLoading,TResult Function()?  loginSuccess,TResult Function( ApiErrorModel failure)?  loginError,TResult Function( Future<void> Function()? function)?  timeOut,TResult Function( bool isPasword)?  authStateChangePasswordVisibility,TResult Function()?  showSignUp,TResult Function( String message)?  signUpError,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function( bool isPasword)?  authStateChangePasswordVisibility,TResult Function( bool isPasword)?  authStateChangeRePasswordVisibility,TResult Function()?  showSignUp,TResult Function( String message)?  signUpError,TResult Function( String message)?  signUpSuccess,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial();case AuthStateLoginLoading() when loginLoading != null:
-return loginLoading();case AuthStateLoginSuccess() when loginSuccess != null:
-return loginSuccess();case AuthStateLoginError() when loginError != null:
-return loginError(_that.failure);case TimeoutFailureAuth() when timeOut != null:
-return timeOut(_that.function);case AuthStateChangePasswordVisibility() when authStateChangePasswordVisibility != null:
-return authStateChangePasswordVisibility(_that.isPasword);case AuthStateShowSignUp() when showSignUp != null:
+return initial();case AuthStateChangePasswordVisibility() when authStateChangePasswordVisibility != null:
+return authStateChangePasswordVisibility(_that.isPasword);case AuthStateChangeRePasswordVisibility() when authStateChangeRePasswordVisibility != null:
+return authStateChangeRePasswordVisibility(_that.isPasword);case AuthStateShowSignUp() when showSignUp != null:
 return showSignUp();case AuthStateSignUpError() when signUpError != null:
-return signUpError(_that.message);case _:
+return signUpError(_that.message);case AuthStateSignUpSuccess() when signUpSuccess != null:
+return signUpSuccess(_that.message);case _:
   return orElse();
 
 }
@@ -168,17 +160,15 @@ return signUpError(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loginLoading,required TResult Function()  loginSuccess,required TResult Function( ApiErrorModel failure)  loginError,required TResult Function( Future<void> Function()? function)  timeOut,required TResult Function( bool isPasword)  authStateChangePasswordVisibility,required TResult Function()  showSignUp,required TResult Function( String message)  signUpError,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function( bool isPasword)  authStateChangePasswordVisibility,required TResult Function( bool isPasword)  authStateChangeRePasswordVisibility,required TResult Function()  showSignUp,required TResult Function( String message)  signUpError,required TResult Function( String message)  signUpSuccess,}) {final _that = this;
 switch (_that) {
 case _Initial():
-return initial();case AuthStateLoginLoading():
-return loginLoading();case AuthStateLoginSuccess():
-return loginSuccess();case AuthStateLoginError():
-return loginError(_that.failure);case TimeoutFailureAuth():
-return timeOut(_that.function);case AuthStateChangePasswordVisibility():
-return authStateChangePasswordVisibility(_that.isPasword);case AuthStateShowSignUp():
+return initial();case AuthStateChangePasswordVisibility():
+return authStateChangePasswordVisibility(_that.isPasword);case AuthStateChangeRePasswordVisibility():
+return authStateChangeRePasswordVisibility(_that.isPasword);case AuthStateShowSignUp():
 return showSignUp();case AuthStateSignUpError():
-return signUpError(_that.message);case _:
+return signUpError(_that.message);case AuthStateSignUpSuccess():
+return signUpSuccess(_that.message);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,17 +185,15 @@ return signUpError(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loginLoading,TResult? Function()?  loginSuccess,TResult? Function( ApiErrorModel failure)?  loginError,TResult? Function( Future<void> Function()? function)?  timeOut,TResult? Function( bool isPasword)?  authStateChangePasswordVisibility,TResult? Function()?  showSignUp,TResult? Function( String message)?  signUpError,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function( bool isPasword)?  authStateChangePasswordVisibility,TResult? Function( bool isPasword)?  authStateChangeRePasswordVisibility,TResult? Function()?  showSignUp,TResult? Function( String message)?  signUpError,TResult? Function( String message)?  signUpSuccess,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial();case AuthStateLoginLoading() when loginLoading != null:
-return loginLoading();case AuthStateLoginSuccess() when loginSuccess != null:
-return loginSuccess();case AuthStateLoginError() when loginError != null:
-return loginError(_that.failure);case TimeoutFailureAuth() when timeOut != null:
-return timeOut(_that.function);case AuthStateChangePasswordVisibility() when authStateChangePasswordVisibility != null:
-return authStateChangePasswordVisibility(_that.isPasword);case AuthStateShowSignUp() when showSignUp != null:
+return initial();case AuthStateChangePasswordVisibility() when authStateChangePasswordVisibility != null:
+return authStateChangePasswordVisibility(_that.isPasword);case AuthStateChangeRePasswordVisibility() when authStateChangeRePasswordVisibility != null:
+return authStateChangeRePasswordVisibility(_that.isPasword);case AuthStateShowSignUp() when showSignUp != null:
 return showSignUp();case AuthStateSignUpError() when signUpError != null:
-return signUpError(_that.message);case _:
+return signUpError(_that.message);case AuthStateSignUpSuccess() when signUpSuccess != null:
+return signUpSuccess(_that.message);case _:
   return null;
 
 }
@@ -244,202 +232,6 @@ String toString() {
 
 
 
-
-/// @nodoc
-
-
-class AuthStateLoginLoading implements AuthState {
-  const AuthStateLoginLoading();
-  
-
-
-
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthStateLoginLoading);
-}
-
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'AuthState.loginLoading()';
-}
-
-
-}
-
-
-
-
-/// @nodoc
-
-
-class AuthStateLoginSuccess implements AuthState {
-  const AuthStateLoginSuccess();
-  
-
-
-
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthStateLoginSuccess);
-}
-
-
-@override
-int get hashCode => runtimeType.hashCode;
-
-@override
-String toString() {
-  return 'AuthState.loginSuccess()';
-}
-
-
-}
-
-
-
-
-/// @nodoc
-
-
-class AuthStateLoginError implements AuthState {
-  const AuthStateLoginError(this.failure);
-  
-
- final  ApiErrorModel failure;
-
-/// Create a copy of AuthState
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$AuthStateLoginErrorCopyWith<AuthStateLoginError> get copyWith => _$AuthStateLoginErrorCopyWithImpl<AuthStateLoginError>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthStateLoginError&&(identical(other.failure, failure) || other.failure == failure));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,failure);
-
-@override
-String toString() {
-  return 'AuthState.loginError(failure: $failure)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $AuthStateLoginErrorCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
-  factory $AuthStateLoginErrorCopyWith(AuthStateLoginError value, $Res Function(AuthStateLoginError) _then) = _$AuthStateLoginErrorCopyWithImpl;
-@useResult
-$Res call({
- ApiErrorModel failure
-});
-
-
-
-
-}
-/// @nodoc
-class _$AuthStateLoginErrorCopyWithImpl<$Res>
-    implements $AuthStateLoginErrorCopyWith<$Res> {
-  _$AuthStateLoginErrorCopyWithImpl(this._self, this._then);
-
-  final AuthStateLoginError _self;
-  final $Res Function(AuthStateLoginError) _then;
-
-/// Create a copy of AuthState
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? failure = null,}) {
-  return _then(AuthStateLoginError(
-null == failure ? _self.failure : failure // ignore: cast_nullable_to_non_nullable
-as ApiErrorModel,
-  ));
-}
-
-
-}
-
-/// @nodoc
-
-
-class TimeoutFailureAuth implements AuthState {
-  const TimeoutFailureAuth({this.function});
-  
-
- final  Future<void> Function()? function;
-
-/// Create a copy of AuthState
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$TimeoutFailureAuthCopyWith<TimeoutFailureAuth> get copyWith => _$TimeoutFailureAuthCopyWithImpl<TimeoutFailureAuth>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TimeoutFailureAuth&&(identical(other.function, function) || other.function == function));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,function);
-
-@override
-String toString() {
-  return 'AuthState.timeOut(function: $function)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class $TimeoutFailureAuthCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
-  factory $TimeoutFailureAuthCopyWith(TimeoutFailureAuth value, $Res Function(TimeoutFailureAuth) _then) = _$TimeoutFailureAuthCopyWithImpl;
-@useResult
-$Res call({
- Future<void> Function()? function
-});
-
-
-
-
-}
-/// @nodoc
-class _$TimeoutFailureAuthCopyWithImpl<$Res>
-    implements $TimeoutFailureAuthCopyWith<$Res> {
-  _$TimeoutFailureAuthCopyWithImpl(this._self, this._then);
-
-  final TimeoutFailureAuth _self;
-  final $Res Function(TimeoutFailureAuth) _then;
-
-/// Create a copy of AuthState
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? function = freezed,}) {
-  return _then(TimeoutFailureAuth(
-function: freezed == function ? _self.function : function // ignore: cast_nullable_to_non_nullable
-as Future<void> Function()?,
-  ));
-}
-
-
-}
 
 /// @nodoc
 
@@ -499,6 +291,72 @@ class _$AuthStateChangePasswordVisibilityCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? isPasword = null,}) {
   return _then(AuthStateChangePasswordVisibility(
+isPasword: null == isPasword ? _self.isPasword : isPasword // ignore: cast_nullable_to_non_nullable
+as bool,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class AuthStateChangeRePasswordVisibility implements AuthState {
+  const AuthStateChangeRePasswordVisibility({required this.isPasword});
+  
+
+ final  bool isPasword;
+
+/// Create a copy of AuthState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AuthStateChangeRePasswordVisibilityCopyWith<AuthStateChangeRePasswordVisibility> get copyWith => _$AuthStateChangeRePasswordVisibilityCopyWithImpl<AuthStateChangeRePasswordVisibility>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthStateChangeRePasswordVisibility&&(identical(other.isPasword, isPasword) || other.isPasword == isPasword));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,isPasword);
+
+@override
+String toString() {
+  return 'AuthState.authStateChangeRePasswordVisibility(isPasword: $isPasword)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AuthStateChangeRePasswordVisibilityCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
+  factory $AuthStateChangeRePasswordVisibilityCopyWith(AuthStateChangeRePasswordVisibility value, $Res Function(AuthStateChangeRePasswordVisibility) _then) = _$AuthStateChangeRePasswordVisibilityCopyWithImpl;
+@useResult
+$Res call({
+ bool isPasword
+});
+
+
+
+
+}
+/// @nodoc
+class _$AuthStateChangeRePasswordVisibilityCopyWithImpl<$Res>
+    implements $AuthStateChangeRePasswordVisibilityCopyWith<$Res> {
+  _$AuthStateChangeRePasswordVisibilityCopyWithImpl(this._self, this._then);
+
+  final AuthStateChangeRePasswordVisibility _self;
+  final $Res Function(AuthStateChangeRePasswordVisibility) _then;
+
+/// Create a copy of AuthState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? isPasword = null,}) {
+  return _then(AuthStateChangeRePasswordVisibility(
 isPasword: null == isPasword ? _self.isPasword : isPasword // ignore: cast_nullable_to_non_nullable
 as bool,
   ));
@@ -597,6 +455,72 @@ class _$AuthStateSignUpErrorCopyWithImpl<$Res>
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
   return _then(AuthStateSignUpError(
+null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class AuthStateSignUpSuccess implements AuthState {
+  const AuthStateSignUpSuccess(this.message);
+  
+
+ final  String message;
+
+/// Create a copy of AuthState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AuthStateSignUpSuccessCopyWith<AuthStateSignUpSuccess> get copyWith => _$AuthStateSignUpSuccessCopyWithImpl<AuthStateSignUpSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthStateSignUpSuccess&&(identical(other.message, message) || other.message == message));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,message);
+
+@override
+String toString() {
+  return 'AuthState.signUpSuccess(message: $message)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $AuthStateSignUpSuccessCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
+  factory $AuthStateSignUpSuccessCopyWith(AuthStateSignUpSuccess value, $Res Function(AuthStateSignUpSuccess) _then) = _$AuthStateSignUpSuccessCopyWithImpl;
+@useResult
+$Res call({
+ String message
+});
+
+
+
+
+}
+/// @nodoc
+class _$AuthStateSignUpSuccessCopyWithImpl<$Res>
+    implements $AuthStateSignUpSuccessCopyWith<$Res> {
+  _$AuthStateSignUpSuccessCopyWithImpl(this._self, this._then);
+
+  final AuthStateSignUpSuccess _self;
+  final $Res Function(AuthStateSignUpSuccess) _then;
+
+/// Create a copy of AuthState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
+  return _then(AuthStateSignUpSuccess(
 null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String,
   ));

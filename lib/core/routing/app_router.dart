@@ -32,7 +32,6 @@ class AppRouter {
           screen: const WelcomeScreen(),
           cubit: AuthCubit(getIt()),
         );
-
       default:
         return null;
     }

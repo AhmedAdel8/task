@@ -56,8 +56,8 @@ final ThemeData darkTheme = ThemeData(
         color: const Color(0xFF6B7280),
       );
     }),
-  ),
-  scaffoldBackgroundColor: const Color(0xFF0F1728),
+  ),     
+  scaffoldBackgroundColor: const Color(0xff000000),
   primaryColor: AppColors.primaryColor,
   colorScheme: const ColorScheme.dark(
     primary: AppColors.primaryColor,

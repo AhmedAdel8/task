@@ -10,8 +10,9 @@ class CustomSoicalButtonWidget extends StatelessWidget {
     return Column(
       children: [
         CustomButton(
+          fontSize: 14.sp,
           height: 50.sp,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w700,
           image: "assets/images/apple.png",
           borderRadius: 16.sp,
           padding: EdgeInsets.symmetric(horizontal: 11.w),
@@ -25,8 +26,9 @@ class CustomSoicalButtonWidget extends StatelessWidget {
         ),
         10.verticalSpace,
         CustomButton(
+          fontSize: 14.sp,
           height: 50.sp,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w700,
           image: "assets/images/search.png",
           borderRadius: 16.sp,
           padding: EdgeInsets.symmetric(horizontal: 11.w),

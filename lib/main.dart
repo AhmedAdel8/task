@@ -1,4 +1,5 @@
 import 'dart:developer';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -92,7 +93,7 @@ class TaskApp extends StatelessWidget {
               locale: context.locale,
               theme: darkTheme,
               darkTheme: darkTheme,
-              themeMode: ThemeMode.light,
+              themeMode: ThemeMode.dark,
               initialRoute: Routes.welcomeScreen,
               onGenerateRoute: appRouter.generateRoute,
               builder: EasyLoading.init(),

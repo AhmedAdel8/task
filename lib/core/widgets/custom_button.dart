@@ -55,8 +55,9 @@ class CustomButton extends StatelessWidget {
           gradient: gradientColors != null
               ? LinearGradient(
                   colors: gradientColors!,
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
+            
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
                 )
               : null,
           borderRadius: BorderRadius.circular(borderRadius),
@@ -93,6 +94,7 @@ class CustomButton extends StatelessWidget {
                   text!,
                   textAlign: TextAlign.center,
                   style: TextStyle(
+                    fontFamily: "Satoshi Variable",
                     color: textColor ?? Colors.white,
                     fontSize: fontSize ?? 16.sp,
                     fontWeight: fontWeight,

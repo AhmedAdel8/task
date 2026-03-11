@@ -18,7 +18,7 @@ class WelcomeWidget extends StatelessWidget {
             "Welcome to OasisNow",
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontFamily: "Satoshi",
+              fontFamily: "Satoshi Variable",
               fontWeight: FontWeight.w700,
               fontSize: 20.sp,
               letterSpacing: -0.5,
@@ -27,13 +27,17 @@ class WelcomeWidget extends StatelessWidget {
           ),
         ),
         6.verticalSpace,
-        Text(
-          "The best cooking and the best care from our professional hands to your plate",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 13.sp,
-            fontWeight: FontWeight.w400,
-            color: const Color(0xffffffff).withValues(alpha: 0.6),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 13.sp),
+          child: Text(
+            "The best cooking and the best care from our professional hands to your plate",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: "Satoshi Variable",
+              fontSize: 13.sp,
+              fontWeight: FontWeight.w400,
+              color: const Color(0xffffffff).withValues(alpha: 0.6),
+            ),
           ),
         ),
       ],
